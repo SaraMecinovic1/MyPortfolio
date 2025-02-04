@@ -1,8 +1,11 @@
-const MainPage = () => {
-  return <div className="w-full h-auto ">
+import NavBar from "../component/NavBar";
 
-    
-  </div>;
+const MainPage = () => {
+  return (
+    <div className="w-full h-auto ">
+      <NavBar />
+    </div>
+  );
 };
 
 export default MainPage;
