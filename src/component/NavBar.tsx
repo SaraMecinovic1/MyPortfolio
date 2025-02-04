@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import useMediaQuery from "../hooks/ useMediaQuery";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/solid";
+import useSectionStore from "../store/useSectionStore";
 
 const NavBar = () => {
+  const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const { activeSection, setActiveSection } = useSectionStore();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,49 +32,66 @@ const NavBar = () => {
 
       setActiveSection(currentSection);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [setActiveSection]);
 
   return (
-    <nav className="bg-white fixed top-0 z-30 w-full h-[70px] flex justify-center shadow-md">
-      <div className="max-w-screen-xl w-full flex items-center justify-between px-6">
-        {/* Logo */}
-        <h1 className="text-mainText text-3xl font-notoSerif">SARA</h1>
+    <nav>
+      <div className="bg-white fixed flex justify-center  top-0 z-30 w-full h-[70px]">
+        <div className=" max-w-screen-xl w-full  flex items-center justify-between px-6">
+          {/* Logo - Left side */}
+          <div className="flex items-center ">
+            <h1 className="text-mainText text-3xl font-dm font-semibold">SARA.</h1>
+          </div>
 
-        {/* Navigacija */}
-        <div className="hidden md:flex items-center gap-8 font-medium">
-          {["home", "about", "skills", "projects", "experience", "contact"].map(
-            (section) => (
-              <a
-                key={section}
-                href={`#${section}`}
-                className={`text-lg ${
-                  activeSection === section ? "text-primary " : "text-mainText"
-                } hover:text-primary transition duration-300`}
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </a>
-            )
+          {/* Menu for larger screens */}
+          {isAboveMediumScreen && (
+            <div className="hidden md:flex items-center gap-8 font-medium">
+              {[
+                "home",
+                "about",
+                "skills",
+                "projects",
+                "experience",
+                "contact",
+              ].map((section) => (
+                <a
+                  key={section}
+                  href={`#${section}`}
+                  className={`text-lg ${
+                    activeSection === section
+                      ? "text-primary "
+                      : "text-mainText"
+                  } hover:text-primary transition duration-300`}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </a>
+              ))}
+            </div>
           )}
-        </div>
 
-        {/* Hamburger meni za manje ekrane */}
-        <div className="md:hidden flex items-center">
-          <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-            <Bars3Icon className="h-7 w-7 text-mainText" />
-          </button>
+          {/* Hamburger Icon for smaller screens */}
+          {!isAboveMediumScreen && (
+            <div className="flex items-center">
+              <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+                <Bars3Icon className="h-7 w-7  text-mainText" />
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Mobile meni */}
-      {isMenuToggled && (
-        <div className="fixed right-0 top-0 z-40 h-full w-[250px] bg-white drop-shadow-xl flex flex-col p-6">
-          <button onClick={() => setIsMenuToggled(false)} className="self-end">
-            <XMarkIcon className="h-7 w-7 text-mainText" />
-          </button>
-          <div className="mt-6 flex flex-col gap-6 text-lg font-medium">
+      {/* Mobile Menu */}
+      {!isAboveMediumScreen && isMenuToggled && (
+        <div className="fixed right-0 bottom-0  z-40 h-full w-[250px] bg-white drop-shadow-xl">
+          <div className="flex justify-end p-6">
+            <button onClick={() => setIsMenuToggled(false)}>
+              <XMarkIcon className="h-7 w-7 text-mainText" />
+            </button>
+          </div>
+
+          <div className="mt-6 pl-20  flex flex-col gap-6 text-lg font-medium">
             {[
               "home",
               "about",
