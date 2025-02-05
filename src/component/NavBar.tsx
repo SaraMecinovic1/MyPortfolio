@@ -21,9 +21,9 @@ const NavBar = () => {
       let currentSection = "home";
 
       sections.forEach((section) => {
-        const element = document.getElementById(section);
+        const element = document.getElementById(section); // tražimo svaki element sa tim id
         if (element) {
-          const rect = element.getBoundingClientRect();
+          const rect = element.getBoundingClientRect(); // getBoundingClientRect() -nam daje informacije o poziciji elementa.
           if (rect.top <= 150 && rect.bottom >= 150) {
             currentSection = section;
           }
@@ -42,7 +42,9 @@ const NavBar = () => {
         <div className=" max-w-screen-xl w-full  flex items-center justify-between px-6">
           {/* Logo - Left side */}
           <div className="flex items-center ">
-            <h1 className="text-mainText text-3xl font-dm font-semibold">SARA.</h1>
+            <h1 className="text-mainText text-3xl font-dm font-semibold">
+              SARA.
+            </h1>
           </div>
 
           {/* Menu for larger screens */}
@@ -50,7 +52,7 @@ const NavBar = () => {
             <div className="hidden md:flex items-center gap-8 font-medium">
               {[
                 "home",
-                "about",
+                "about me",
                 "skills",
                 "projects",
                 "experience",
@@ -94,7 +96,7 @@ const NavBar = () => {
           <div className="mt-6 pl-20  flex flex-col gap-6 text-lg font-medium">
             {[
               "home",
-              "about",
+              "about me",
               "skills",
               "projects",
               "experience",
