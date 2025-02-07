@@ -1,6 +1,5 @@
 import * as React from "react";
 import * as ProgressPrimitive from "@radix-ui/react-progress";
-
 import { cn } from "../../lib/utils";
 
 const Progress = React.forwardRef<
@@ -8,34 +7,52 @@ const Progress = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
 >(({ className, value, ...props }, ref) => {
   const [progress, setProgress] = React.useState(0);
+  const progressRef = React.useRef(null);
 
   React.useEffect(() => {
-    let start = 0;
-    const step = value / 50; // Brzina animacije (može se podesiti)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          let start = 0;
+          const step = value / 50;
 
-    const interval = setInterval(() => {
-      start += step;
-      setProgress(Math.min(start, value)); // Ograničava na krajnju vrednost
-      if (start >= value) clearInterval(interval);
-    }, 20); // Ubrzanje učitavanja
+          const interval = setInterval(() => {
+            start += step;
+            setProgress(Math.min(start, value));
+            if (start >= value) clearInterval(interval);
+          }, 20);
+        }
+      },
+      { threshold: 0.5 } 
+    );
 
-    return () => clearInterval(interval);
+    if (progressRef.current) {
+      observer.observe(progressRef.current);
+    }
+
+    return () => {
+      if (progressRef.current) {
+        observer.unobserve(progressRef.current);
+      }
+    };
   }, [value]);
 
   return (
-    <ProgressPrimitive.Root
-      ref={ref}
-      className={cn(
-        "relative h-2 w-full overflow-hidden rounded-full bg-mainText/20 dark:bg-neutral-50/20",
-        className
-      )}
-      {...props}
-    >
-      <ProgressPrimitive.Indicator
-        className="h-full w-full flex-1 bg-primary transition-all duration-300 dark:bg-neutral-50"
-        style={{ transform: `translateX(-${100 - progress}%)` }}
-      />
-    </ProgressPrimitive.Root>
+    <div ref={progressRef}>
+      <ProgressPrimitive.Root
+        ref={ref}
+        className={cn(
+          "relative h-2 w-full overflow-hidden rounded-full bg-mainText/20 dark:bg-neutral-50/20",
+          className
+        )}
+        {...props}
+      >
+        <ProgressPrimitive.Indicator
+          className="h-full w-full flex-1 bg-primary transition-all duration-300 dark:bg-neutral-50"
+          style={{ transform: `translateX(-${100 - progress}%)` }}
+        />
+      </ProgressPrimitive.Root>
+    </div>
   );
 });
 

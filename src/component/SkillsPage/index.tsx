@@ -20,12 +20,12 @@ const skills = [
 const SkillsPage = () => {
   return (
     <section id="skills">
-      <div className="w-full min-h-screen bg-[#f8f9fa] px-5 flex flex-col items-center gap-6 font-inter">
-        <h1 className="mt-32 text-3xl md:text-[43px] font-semibold text-primary">
+      <div className="w-full min-h-screen bg-[#f8f9fa] px-5 flex flex-col items-center justify-center gap-6 font-inter pb-20 sm:pb-40">
+        <h1 className="mt-32 text-3xl md:text-[43px] font-semibold text-mainText">
           MY SKILLS
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6  w-full max-w-5xl mt-10">
+        <div className="grid grid-cols-1  gap-6 md:grid-cols-2  w-full max-w-4xl mt-10">
           {skills.map((skill, index) => (
             <div
               key={index}
