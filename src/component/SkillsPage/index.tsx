@@ -24,13 +24,11 @@ const SkillsPage = () => {
         <h1 className="mt-32 text-3xl md:text-[43px] font-semibold text-mainText">
           MY SKILLS
         </h1>
+        <hr className=" w-[80%] sm:w-[55%]  border-[1.5px] border-primary" />
 
         <div className="grid grid-cols-1  gap-6 md:grid-cols-2  w-full max-w-4xl mt-10">
           {skills.map((skill, index) => (
-            <div
-              key={index}
-              className=" p-5 rounded-lg shadow-md flex w-full  items-start gap-4"
-            >
+            <div key={index} className=" p-5  flex w-full  items-start gap-4">
               <img
                 src={skill.img}
                 alt={skill.name}
