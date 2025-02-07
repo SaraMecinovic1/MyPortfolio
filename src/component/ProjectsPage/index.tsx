@@ -3,6 +3,9 @@ import FinsmartImg from "../../assets/finsmart.jpeg";
 import DataImg from "../../assets/data.jpeg";
 import GymImg from "../../assets/gym.jpeg";
 import SpotifyImg from "../../assets/spotify.jpeg";
+import Todo from "../../assets/todo.jpeg";
+import Bella from "../../assets/bella.jpeg";
+import Nexus from "../../assets/nexus.jpeg";
 
 const projects = [
   {
@@ -28,12 +31,31 @@ const projects = [
     image: GymImg,
     alt: "Data project preview",
     title: "EvoGym Web Site",
-  },{
+  },
+  {
     id: 5,
     image: SpotifyImg,
     alt: "Data project preview",
     title: "EvoGym Web Site",
-  }
+  },
+  {
+    id: 6,
+    image: Todo,
+    alt: "Data project preview",
+    title: "EvoGym Web Site",
+  },
+  {
+    id: 7,
+    image: Bella,
+    alt: "Data project preview",
+    title: "EvoGym Web Site",
+  },
+  {
+    id: 8,
+    image: Nexus,
+    alt: "Data project preview",
+    title: "EvoGym Web Site",
+  },
 ];
 
 const ProjectsPage = () => {
@@ -47,7 +69,7 @@ const ProjectsPage = () => {
           “Talk is cheap. Show me the code.” – Linus Torvalds
         </h2>
 
-        <div className="w-full h-full  grid grid-cols-3 gap-5 mt-20">
+        <div className="w-full h-full  grid grid-cols-4 gap-5 mt-20">
           {projects.map((project) => (
             <div
               key={project.id}
