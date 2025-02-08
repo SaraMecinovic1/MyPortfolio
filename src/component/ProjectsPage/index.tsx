@@ -61,11 +61,11 @@ const ProjectsPage = () => {
           “Talk is cheap. Show me the code.” – Linus Torvalds
         </h2>
 
-        <div className="w-full max-w-7xl mx-auto h-full grid grid-cols-1 md:grid-cols-2  2xl:grid-cols-3 gap-10 mt-20">
+        <div className="w-full max-w-7xl mx-auto h-full grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-10  mt-20">
           {projects.slice(0, visibleProjects).map((project) => (
             <div
               key={project.id}
-              className="w-full max-w-[460px] mx-auto mb-5 h-[380px] rounded-lg shadow-lg flex flex-col cursor-pointer relative group"
+              className="w-full max-w-[460px] mx-auto mb-5 h-[380px] rounded-lg shadow-lg flex flex-col cursor-pointer relative group transition-transform transform hover:-translate-y-3"
             >
               <div className="w-full h-[85%] relative">
                 <img
@@ -85,9 +85,9 @@ const ProjectsPage = () => {
         {visibleProjects < projects.length && (
           <button
             onClick={loadMore}
-            className="mt-10 px-6 py-2 text-white bg-primary rounded-lg shadow-md hover:bg-opacity-90 transition"
+            className="mt-10 px-8 py-2 text-white bg-primary rounded-3xl shadow-md hover:bg-opacity-90 transition"
           >
-            Load More...
+            Load more...
           </button>
         )}
       </div>
