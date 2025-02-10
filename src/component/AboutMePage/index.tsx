@@ -27,6 +27,15 @@ const AboutMePage = () => {
             applications through innovative solutions and modern technology that
             not only look great but also provide a flawless user experience.
           </p>
+
+          {/* <h1 className="text-2xl md:text-md font-semibold mb-1 mt-5 text-primary">
+            EDUCATION{" "}
+          </h1>
+          <div>
+            <h1 className="font-semibold text-lg text-gray-800">
+              High School: <span className="font-medium">Medical High School</span>{" "}
+            </h1>
+          </div> */}
         </div>
       </div>
     </section>

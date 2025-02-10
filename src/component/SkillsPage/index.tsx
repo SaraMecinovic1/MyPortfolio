@@ -69,7 +69,7 @@ const SkillsPage = () => {
                 alt={skill.name}
                 className="h-[40px] w-[40px] md:h-[60px] md:w-[60px] object-contain"
               />
-              <h2 className="text-sm sm:text-lg text-center font-semibold text-gray-800 mt-2">
+              <h2 className="text-sm sm:text-lg text-center font-semibold text-gray-700 mt-2">
                 {skill.name}
               </h2>
             </div>

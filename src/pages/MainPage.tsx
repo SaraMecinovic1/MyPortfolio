@@ -3,6 +3,7 @@ import AboutMePage from "../component/AboutMePage";
 import HomePage from "../component/HomePage/index";
 import NavBar from "../component/NavBar";
 import ProjectsPage from "../component/ProjectsPage";
+import ExpiriencePage from "../component/ExperiencePage";
 
 const MainPage = () => {
   return (
@@ -12,6 +13,7 @@ const MainPage = () => {
       <AboutMePage />
       <SkillsPage />
       <ProjectsPage />
+      <ExpiriencePage />
     </div>
   );
 };
