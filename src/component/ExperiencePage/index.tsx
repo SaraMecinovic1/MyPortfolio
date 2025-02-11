@@ -13,7 +13,7 @@ const ExpiriencePage = () => {
           <img
             src={BonisLabs}
             alt="BonisLabs Logo"
-            className="w-[120px] h-[130px]  sm:mt-10 sm:mb-0"
+            className="w-[120px] h-[130px]   sm:mb-0"
           />
           <div className="w-full max-w-[450px] flex flex-col justify-start gap-3 text-center sm:text-left">
             <h1 className="text-3xl font-medium">BonisLabs</h1>
