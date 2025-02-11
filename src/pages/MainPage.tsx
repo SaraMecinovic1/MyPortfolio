@@ -9,6 +9,7 @@ import ContactPage from "../component/ContactPage";
 const MainPage = () => {
   return (
     <div className="w-full h-auto ">
+    
       <NavBar />
       <HomePage />
       <AboutMePage />
