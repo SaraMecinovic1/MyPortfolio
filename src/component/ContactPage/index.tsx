@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Textarea } from "../../components/ui/textarea";
 import { Input } from "../../components/ui/input";
@@ -46,11 +46,13 @@ const ContactPage = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const sendEmail = async (e) => {
+  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     try {
@@ -68,7 +70,6 @@ const ContactPage = () => {
     }
 
     setLoading(false);
-    console.log("email from user: ", formData);
   };
 
   return (
@@ -83,7 +84,6 @@ const ContactPage = () => {
           {/* EMAIL FORM */}
           <div className="w-full md:max-w-[80%] lg:w-[65%] bg-[#f8f9fa] p-5 sm:p-10 rounded-lg shadow-sm">
             <form className="flex flex-col gap-4 w-full" onSubmit={sendEmail}>
-              {/* First Row */}
               <div className="flex flex-col md:flex-row gap-4 w-full">
                 <Input
                   type="text"
@@ -130,7 +130,7 @@ const ContactPage = () => {
             </form>
           </div>
           {/* INFO */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 mt-10 lg:ml-10  sm:ml-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8  mt-10 lg:ml-10  sm:ml-5">
             {information.map((info, index) => (
               <div key={index} className="flex items-center gap-3">
                 <div className="bg-primary rounded-full p-3 lg:p-4 xl:p-5">
