@@ -19,7 +19,7 @@ const projects = [
     id: 2,
     image: FinsmartImg,
     alt: "Finsmart project preview",
-    title: "Finsmart Web App",
+    title: "Finansmart Web App",
   },
   {
     id: 3,
