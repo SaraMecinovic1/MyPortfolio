@@ -5,18 +5,18 @@ import FinansmartMac from "../../assets/finansmartMac.png";
 const FinasmartPage = () => {
   return (
     <div className="w-full min-h-screen p-5 bg-[#f8f9fa] flex flex-col items-center justify-center font-inter">
-      <div className="w-[90%] mt-20 md:mt-0 flex flex-col lg:flex-row gap-7 h-full lg:items-center">
+      <div className="w-[80%] mt-20 xl:mt-0  flex flex-col lg:flex-row gap-7 h-full lg:items-center ">
         {/* MacBook Mockup */}
-        <div className="w-full h-full lg:w-[55%] bg-red-100">
+        <div className="w-full lg:w-[50%] xl:w-[50%] h-full flex justify-center">
           <img
             src={FinansmartMac}
             alt="Macbook mockup"
-            className="w-full h-full object-cover"
+            className="min-w-[430px] lg:min-w-[700px] lg:mr-[50px] xl:mr-0 xl:w-auto h-full object-cover"
           />
         </div>
 
         {/* Info Section */}
-        <div className="w-full lg:w-[35%] lg:mt-20 bg-purple-100 text-center lg:text-left ">
+        <div className="w-full lg:w-[50%] xl:w-[40%] lg:mt-0 text-center lg:text-left flex flex-col justify-between">
           <h1 className="text-4xl font-semibold text-primary">Finansmart</h1>
           <div className="mt-3 flex flex-row justify-center lg:justify-start gap-3 mb-7">
             {/* Link to website */}
