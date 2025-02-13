@@ -9,6 +9,8 @@ import DataPage from "./pages/DataPage";
 import GymPage from "./pages/GymPage";
 import SpotifyPage from "./pages/SpotifyPage";
 import TodoPage from "./pages/TodoPage";
+import JewerlyPage from "./pages/JewerlyPage";
+import NexusPage from "./pages/NexusPage";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/evogym" element={<GymPage />} />
         <Route path="/spotify" element={<SpotifyPage />} />
         <Route path="/todo" element={<TodoPage />} />
+        <Route path="/jewerly" element={<JewerlyPage />} />
+        <Route path="/nexus" element={<NexusPage />} />
       </Routes>
     </div>
   );
