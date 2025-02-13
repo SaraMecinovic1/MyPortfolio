@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import useMediaQuery from "../hooks/ useMediaQuery";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/solid";
 import useSectionStore from "../store/useSectionStore";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const { activeSection, setActiveSection } = useSectionStore();
   const [hasShadow, setHasShadow] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +52,10 @@ const NavBar = () => {
         <div className="max-w-screen-xl w-full flex items-center justify-between px-6">
           {/* Logo - Left side */}
           <div className="flex items-center">
-            <h1 className="text-mainText text-2xl sm:text-3xl font-dm font-semibold">
+            <h1
+              onClick={() => navigate("/")}
+              className="text-mainText text-2xl sm:text-3xl font-dm font-semibold"
+            >
               SARA.
             </h1>
           </div>

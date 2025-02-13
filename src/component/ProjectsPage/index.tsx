@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importuj useNavigate
 import FilmifyImg from "../../assets/filmify.jpeg";
 import FinsmartImg from "../../assets/finsmart.jpeg";
 import DataImg from "../../assets/data.jpeg";
@@ -14,38 +15,56 @@ const projects = [
     image: FilmifyImg,
     alt: "Filmify project preview",
     title: "Filmify Web App",
+    route: "/filmify",
   },
   {
     id: 2,
     image: FinsmartImg,
     alt: "Finsmart project preview",
     title: "Finansmart Web App",
+    route: "/finansmart",
   },
   {
     id: 3,
     image: DataImg,
     alt: "Data project preview",
     title: "Special users data Web App",
+    route: "/data",
   },
   {
     id: 4,
     image: GymImg,
-    alt: "Data project preview",
+    alt: "Gym project preview",
     title: "EvoGym Web Site",
+    route: "/evogym",
   },
-  { id: 5, image: SpotifyImg, alt: "Spotify clone", title: "Spotify clone" },
-  { id: 6, image: Todo, alt: "To Do App", title: "To Do App" },
+  {
+    id: 5,
+    image: SpotifyImg,
+    alt: "Spotify clone",
+    title: "Spotify clone",
+    route: "/spotify",
+  },
+  { id: 6, image: Todo, alt: "To Do App", title: "To Do App", route: "/todo" },
   {
     id: 7,
     image: Bella,
-    alt: "Data project preview",
+    alt: "Jewelry project preview",
     title: "Jewerly Web App",
+    route: "/jewerly",
   },
-  { id: 8, image: Nexus, alt: "Data project preview", title: "Nexus Web Site" },
+  {
+    id: 8,
+    image: Nexus,
+    alt: "Nexus project preview",
+    title: "Nexus Web Site",
+    route: "/nexus",
+  },
 ];
 
 const ProjectsPage = () => {
   const [visibleProjects, setVisibleProjects] = useState(6);
+  const navigate = useNavigate();
 
   const loadMore = () => {
     setVisibleProjects(projects.length);
@@ -66,6 +85,7 @@ const ProjectsPage = () => {
             <div
               key={project.id}
               className="w-full max-w-[460px] mx-auto mb-5 h-[380px] rounded-lg shadow-lg flex flex-col cursor-pointer relative group transition-transform transform hover:-translate-y-3"
+              onClick={() => navigate(project.route)}
             >
               <div className="w-full h-[85%] relative">
                 <img
