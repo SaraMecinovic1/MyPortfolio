@@ -31,7 +31,6 @@ const NexusPage = () => {
               <img src={Link} alt="Website link" className="w-[18px]" />
             </a>
 
-            {/* Link to GitHub repository */}
             <a
               href="https://github.com/SaraMecinovic1/project-1"
               target="_blank"
