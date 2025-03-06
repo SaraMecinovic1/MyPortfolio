@@ -18,19 +18,18 @@ const ExpiriencePage = () => {
           <div className="w-full max-w-[450px] flex flex-col justify-start gap-3 text-center sm:text-left">
             <h1 className="text-3xl font-medium">BonisLabs</h1>
             <p className="text-md text-gray-700 sm:text-lg">
-              Contrary to popular belief, Lorem Ipsum is not simply random text.
-              It has roots in a piece of classical Latin literature from 45 BC,
-              making it over 2000 years old. Richard McClintock, a Latin
-              professor at Hampden-Sydney College in Virginia, looked up one of
-              the more obscure Latin words, consectetur, from a Lorem Ipsum
-              passage, and going through the cites of the word in classical
-              literature, discovered the undoubtable source.
+              I have had the opportunity to work with a variety of front-end
+              technologies that are popular in the industry. This has given me a
+              well-rounded understanding of the latest trends and tools,
+              enabling me to create dynamic and responsive user interfaces for
+              progressive web and mobile apps
             </p>
 
             <h1 className="text-lg font-semibold">
               Tech:{" "}
               <span className="font-normal text-gray-700">
-                TypeScript, Mantine, Tanstack Query, Zustand
+                React, NextJs, TypeScript, Mantine, Tailwind, Tanstack Query,
+                Zustand, Shadcn,
               </span>
             </h1>
 

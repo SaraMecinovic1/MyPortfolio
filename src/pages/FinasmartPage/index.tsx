@@ -5,7 +5,7 @@ import FinansmartMac from "../../assets/finansmartMac.png";
 const FinasmartPage = () => {
   return (
     <div className="w-full min-h-screen p-5 bg-[#f8f9fa] flex flex-col items-center justify-center font-inter">
-      <div className="w-[80%] mt-20 xl:mt-0  flex flex-col lg:flex-row gap-7 h-full lg:items-center ">
+      <div className="w-[80%] mt-20  xl:mt-20  flex flex-col lg:flex-row gap-7 h-full  ">
         {/* MacBook Mockup */}
         <div className="w-full lg:w-[50%] xl:w-[50%] h-full flex justify-center">
           <img

@@ -14,11 +14,11 @@ const AboutMePage = () => {
         </div>
         {/* INFO */}
         <div className="max-w-[600px]  lg:ml-10 h-auto md:w-[500px] p-5 flex flex-col justify-start md:items-start">
-          <h1 className="text-3xl md:text-4xl font-semibold mb-3 text-primary">
+          <h1 className="text-3xl text-center md:text-left  md:text-4xl font-semibold mb-3 text-primary">
             ABOUT ME{" "}
           </h1>
           <hr className="w-full mb-10 border-[1.5px] border-primary" />
-          <p className="text-[16px] md:text-[18px] text-gray-800 text-left md:text-left">
+          <p className="text-[16px] md:text-[18px] text-gray-800 text-center md:text-left">
             My name is Sara Mecinović, and I am a Frontend Developer. I love
             transforming ideas into visually appealing and functional web
             interfaces using JavaScript, React, and TypeScript. My focus is on

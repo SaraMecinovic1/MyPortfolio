@@ -122,7 +122,7 @@ const ContactPage = () => {
 
               <Button
                 type="submit"
-                className="w-[180px] h-[50px] bg-primary text-white py-2"
+                className="w-[180px] h-[50px] bg-primary text-white mt-3 py-2"
                 disabled={loading}
               >
                 {loading ? "Sending..." : "Send Message"}
