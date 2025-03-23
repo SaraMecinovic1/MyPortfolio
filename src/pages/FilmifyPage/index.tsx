@@ -1,17 +1,22 @@
 import filmifyMac from "../../assets/filmifyMac.png";
 import Link from "../../assets/link.png";
 import GitHubIcon from "../../assets/giticon.png";
+import { useEffect } from "react";
 
 const FilmifyPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="w-full min-h-screen p-5 bg-[#f8f9fa] flex flex-col items-center justify-center font-inter">
-      <div className="w-[80%] mt-20 xl:mt-0  flex flex-col lg:flex-row gap-7 h-full ">
+      <div className=" mt-20 xl:mt-0 flex flex-col lg:flex-row gap-7 h-full">
         {/* MacBook Mockup */}
         <div className=" w-full lg:w-[50%] xl:w-[50%] h-full mt-20 flex justify-center">
           <img
             src={filmifyMac}
             alt="Macbook mockup"
-            className="min-w-[430px] lg:min-w-[700px] lg:mr-[50px] xl:mr-0 xl:w-auto h-full object-cover"
+            className="w-full lg:w-auto h-full object-cover min-w-0 overflow-hidden"
           />
         </div>
 
