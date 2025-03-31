@@ -11,7 +11,7 @@ const FinasmartPage = () => {
     <div className="w-full min-h-screen p-5 bg-[#f8f9fa] flex flex-col items-center justify-center font-inter max-w-full">
       <div className="w-[80%] mt-20  xl:mt-20  flex flex-col lg:flex-row gap-7 h-full  ">
         {/* MacBook Mockup */}
-        <div className="w-full lg:w-[50%] xl:w-[50%] h-full flex justify-center lg:mt-20">
+        <div className="w-full lg:w-[50%] xl:w-[50%] h-full flex justify-center">
           <img
             src={FinansmartMac}
             alt="MacBook Mockup"
