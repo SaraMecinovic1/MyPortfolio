@@ -5,11 +5,13 @@ import { cn } from "../../lib/utils";
 const Progress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
->(({ className, value, ...props }, ref) => {
+>(({ className, value = 0, ...props }, ref) => {
   const [progress, setProgress] = React.useState(0);
-  const progressRef = React.useRef(null);
+  const progressRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
+    if (value === null || value === undefined) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -23,7 +25,7 @@ const Progress = React.forwardRef<
           }, 20);
         }
       },
-      { threshold: 0.5 } 
+      { threshold: 0.5 }
     );
 
     if (progressRef.current) {
