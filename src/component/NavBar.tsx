@@ -97,14 +97,14 @@ const NavBar = () => {
 
       {/* Mobile Menu */}
       {!isAboveMediumScreen && isMenuToggled && (
-        <div className="fixed right-0 bottom-0 z-40 h-full w-[250px] bg-white drop-shadow-xl">
+        <div className="fixed right-0 bottom-0 z-40 h-full w-[220px] bg-white drop-shadow-xl">
           <div className="flex justify-end p-6">
             <button onClick={() => setIsMenuToggled(false)}>
               <XMarkIcon className="h-7 w-7 text-mainText" />
             </button>
           </div>
 
-          <div className="mt-6 pl-20 flex flex-col gap-6 text-lg font-medium">
+          <div className="mt-6 pl-[50px] flex flex-col gap-6 text-lg font-medium">
             {[
               "home",
               "about ",

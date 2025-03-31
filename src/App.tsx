@@ -14,7 +14,7 @@ import NexusPage from "./pages/NexusPage";
 
 function App() {
   return (
-    <div>
+    <div className="w-full">
       <NavBar />
       <Routes>
         <Route path="/" element={<MainPage />} />
