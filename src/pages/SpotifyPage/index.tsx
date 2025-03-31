@@ -67,7 +67,6 @@ const SpotifyPage = () => {
             visual styling of the application, enabling fast and flexible
             creation of a modern and clean design.
           </p>
-          <hr className="w-full mt-4 border-[1.5px] border-primary" />
         </div>
       </div>
     </div>

@@ -29,7 +29,7 @@ const ExpiriencePage = () => {
               Tech:{" "}
               <span className="font-normal text-gray-700">
                 React, NextJs, TypeScript, Mantine, Tailwind, Tanstack Query,
-                Zustand, Shadcn,
+                Zustand, Shadcn ...
               </span>
             </h1>
 
